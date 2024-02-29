@@ -1,4 +1,4 @@
-name: my firstgithub jobs
+name: my firstgithub jobs with github actions
 
 on:
   push:
