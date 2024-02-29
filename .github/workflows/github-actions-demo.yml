@@ -1,4 +1,4 @@
-name: Octo Organization CI
+name: my firstgithub jobs
 
 on:
   push:
@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+        run: ls
       - name: Run a one-line script
         run: echo Hello from Octo Organization
