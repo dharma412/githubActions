@@ -17,7 +17,8 @@
 							"postman.setEnvironmentVariable('username','Nikita');\r",
 							"postman.setEnvironmentVariable('Tutorial','Javatpoint');"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				},
 				{
@@ -37,7 +38,8 @@
 							"let jsonData = pm.response.json();  \r",
 							"console.log(jsonData.data[2].id);"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -45,9 +47,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url2}}/api/users?page=2",
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
 					"host": [
-						"{{url2}}"
+						"reqres",
+						"in"
 					],
 					"path": [
 						"api",
@@ -78,9 +82,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{url2}}/api/users",
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
 					"host": [
-						"{{url2}}"
+						"reqres",
+						"in"
 					],
 					"path": [
 						"api",
@@ -105,9 +111,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{url2}}/api/users/2",
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
 					"host": [
-						"{{url2}}"
+						"reqres",
+						"in"
 					],
 					"path": [
 						"api",
@@ -137,14 +145,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base_url",
-			"value": "https://reqres.in/",
-			"type": "string",
-			"disabled": true
 		}
 	]
 }
