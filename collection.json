@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "e392a2e8-8652-48b6-b522-0701af6299f3",
+		"name": "Rereq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12017070"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log (\"This is a pre-request script\")\r",
+							"postman.setEnvironmentVariable('username','Nikita');\r",
+							"postman.setEnvironmentVariable('Tutorial','Javatpoint');"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// console.log (\"This is a tests script\")\r",
+							"// pm.environment.set(\"u\", \"Hello\");\r",
+							"// console.log(pm.variables.get(\"Tutorial\"));\r",
+							"// pm.test(\"response is ok\", function () {  \r",
+							"//     pm.response.to.have.status(200);  \r",
+							"// });  \r",
+							"// pm.test(\"stats\",function(){pm.expect(pm.response.code).to.equal(200)})\r",
+							"// pm.test(\"Response\",function(){pm.response.to.be.ok})\r",
+							"// pm.expect(pm.response.text()).to.include(\"michael.lawson@reqres.in\")\r",
+							"\r",
+							"let jsonData = pm.response.json();  \r",
+							"console.log(jsonData.data[2].id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url2}}/api/users?page=2",
+					"host": [
+						"{{url2}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"teja\",\r\n    \"job\": \"software\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url2}}/api/users",
+					"host": [
+						"{{url2}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"teja23\",\r\n    \"job\": \"software43\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url2}}/api/users/2",
+					"host": [
+						"{{url2}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://reqres.in/",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
