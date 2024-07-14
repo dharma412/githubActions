@@ -5,13 +5,13 @@ on:
       - main
 jobs:
   firstjob:
-     name : This is first job
-     run-on : ubuntu-latest
-     steps:
-         -name : First Step
-          uses : actions/checkout@v2
-         -name : Second Step
-          run  : env | sort
+    name : This is first job
+    run-on : ubuntu-latest
+  steps:
+    -name : First Step
+    uses : actions/checkout@v2
+    -name1 : Second Step
+    run : env | sort
     
   
      
