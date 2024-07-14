@@ -9,7 +9,9 @@ jobs:
     -name: this is the first job
      run-on: ubuntu-latest
      steps:
-       run :  date 
+       - uses: actions/checkout@v1
+       - name: Login to DockerHub Registry
+         run :  date 
      
   secondjob:
     -name: This is second job
