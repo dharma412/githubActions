@@ -1,0 +1,28 @@
+name: Create Sample Jobs
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  firstjob:
+    -name: this is the first job
+    run-on: ubuntu-latest
+    steps:
+     run :  date 
+  secondjob:
+    -name: This is second job
+    run-on: windows-latest
+    steps:
+     run: date
+  ThirdJob:
+    -name: This is third job
+    run-on: macos-latest
+    steps:
+      run : date -j -f %Y%m%d-%H%M%S 20180101-234852  +%Y/%m/%d\ %H:%M:%S
+    
+  FourthJob:
+    -name : This is Fourth job
+     needs: [firstjob, secondjob, ThirdJob]
+     
+      
