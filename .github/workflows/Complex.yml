@@ -4,8 +4,28 @@ on:
     branches:
       - main
 jobs:
-  test-workflow:
+  First_Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1
+        run : date
+        
+  Second_Job:
+    runs-on: windows-latest
+    steps:
+      - name: Step1
+        run : date
+
+  Third_job:
+    runs-on: macos-latest
+    steps:
+      - name: Step1
+        run : date -j -f %Y%m%d-%H%M%S 20180101-234852  +%Y/%m/%d\ %H:%M:%S
+
+  Fourth_Job:
+    needs : [First_Job,Second_Job,Third_job ]
     runs-on: ubuntu-latest
     steps:
       - name: Step1
         run : echo "Hello world"
+        
