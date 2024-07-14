@@ -6,6 +6,6 @@ on:
 jobs:
   test-workflow:
     runs-on: ubuntu-latest
-      steps:
-        -name: Diplsay env
-         run: echo "Job first1"
+    steps:
+      - name: Step1
+        run : echo "Hello world"
