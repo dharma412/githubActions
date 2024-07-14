@@ -3,23 +3,15 @@ on:
   push:
     branches:
       - main
-
 jobs:
   firstjob:
+     name : This is first job
      run-on : ubuntu-latest
      steps:
-         run :  date 
-     
-  secondjob:
-     run-on: windows-latest
-     steps:
-       run  : date
-     
-  ThirdJob:
-     
-     run-on: macos-latest
-     steps:
-       run : date -j -f %Y%m%d-%H%M%S 20180101-234852  +%Y/%m/%d\ %H:%M:%S
+         -name : First Step
+          uses : actions/checkout@v2
+         -name : Second Step
+          run  : env | sort
     
   
      
