@@ -10,6 +10,9 @@ jobs:
       - name: Step1
         run : date
         
+      - name: Step2
+        run : date
+        
   Second_Job:
     runs-on: windows-latest
     steps:
